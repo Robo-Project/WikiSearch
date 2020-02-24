@@ -21,7 +21,7 @@ pipeline {
     }
    stage('dbbot') {
       steps {
-		sh 'python3 -m dbbot.run -b postgresql://postgres:postgres@172.17.0.1:5432/postgres -k $(pwd)/data/output.xml'
+		sh 'python -m dbbot.run -b postgresql://postgres:postgres@172.17.0.1:5432/postgres $(pwd)/data/output.xml'
       }
     }
   }
