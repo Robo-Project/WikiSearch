@@ -22,7 +22,7 @@ pipeline {
    stage('dbbot') {
       steps {
 	      sh "python3 -m dbbot.run \
-	      -b postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@172.17.0.1:5432/${POSTGRES_DB} \
+	      -b postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@0.0.0.0:5432/${POSTGRES_DB} \
 	      -k `pwd`/data/output.xml"
       }
     }
